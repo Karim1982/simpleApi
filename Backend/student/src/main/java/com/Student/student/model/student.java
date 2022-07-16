@@ -1,7 +1,11 @@
 package com.Student.student.model;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
-import javax.xml.crypto.Data;
+import java.util.Date;
+
 @Entity
 @Table(name = "students")
 public class student {
@@ -14,6 +18,10 @@ public class student {
     private Gender gender;
     private String age;
     private String adress;
-    private Data datecreate;
-    private Data dateupdate;
+    @CreationTimestamp
+    @Column(name = "date_Creation")
+    private Date dateCreate;
+    @UpdateTimestamp
+    @Column(name = "Date_miseAjour")
+    private Date dateUpdate;
 }
